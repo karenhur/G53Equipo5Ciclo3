@@ -1,0 +1,31 @@
+
+body{
+background-image: url("https://pixabay.com/get/g05e701b12437c91c328fdda3d5b159c61c83179cf1bed2c938246ce2a144a3425586077d9ae98e121a2e308b833a152ce9aacd57420c0ae8d5a120b16a0afcd9_1920.jpg");
+
+}
+
+.login{
+  padding: 2em;
+  border-radius: 10px;
+  background-color: black;
+
+}
+
+
+.titulologin{
+  color: whitesmoke;
+  font-size: 40px;
+}
+
+.links{
+  transition: 0.5 all;
+}
+.links:hover{
+  font-weight: bolder;
+  transition: 0.5 all;
+}
+
+.tablax{
+	background-color: white;
+}
+
