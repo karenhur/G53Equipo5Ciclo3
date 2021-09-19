@@ -1,4 +1,5 @@
-package com.roca12.misiontic2022.tiendalostiburones.DAO;
+package com.grupo53.tienda53.DAO;
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,7 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.roca12.misiontic2022.tiendalostiburones.DTO.UsuarioVO;
+import com.grupo53.tienda53.DTO.UsuarioVO;
+
 
 /**
  * Clase que permite el acceso a la base de datos

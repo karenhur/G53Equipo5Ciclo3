@@ -80,7 +80,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por Diego Rodriguez <i
+					Diseñado y programado por <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 			<!--  

@@ -1,29 +1,39 @@
-package com.roca12.misiontic2022.tiendalostiburones.DTO;
+package com.grupo53.tienda53.DTO;
 
 import java.io.Serializable;
 
-//todas las clases entidad deben ser serializables, y deben estar encapsuladas
-public class UsuarioVO implements Serializable {
-
-	//identificador unico de las clases entidad
-	private static final long serialVersionUID = 1L;
+public class UsuarioVO implements Serializable{
+	
+	private static final long serialVersionUID =1L;
 	
 	private Integer cedula_usuario;
 	private String email_usuario;
 	private String nombre_usuario;
 	private String password;
 	private String usuario;
-	
-	
 	/**
-	 * Metodo que permite ver el valor de la cedula
+	 * @param cedula_usuario
+	 * @param email_usuario
+	 * @param nombre_usuario
+	 * @param password
+	 * @param usuario
+	 */
+	public UsuarioVO(Integer cedula_usuario, String email_usuario, String nombre_usuario, String password,
+			String usuario) {
+		super();
+		this.cedula_usuario = cedula_usuario;
+		this.email_usuario = email_usuario;
+		this.nombre_usuario = nombre_usuario;
+		this.password = password;
+		this.usuario = usuario;
+	}
+	/**
 	 * @return the cedula_usuario
 	 */
 	public Integer getCedula_usuario() {
 		return cedula_usuario;
 	}
 	/**
-	 * Metodo que permite el cambio de la cedula
 	 * @param cedula_usuario the cedula_usuario to set
 	 */
 	public void setCedula_usuario(Integer cedula_usuario) {
@@ -77,7 +87,6 @@ public class UsuarioVO implements Serializable {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	
 	
 	
 

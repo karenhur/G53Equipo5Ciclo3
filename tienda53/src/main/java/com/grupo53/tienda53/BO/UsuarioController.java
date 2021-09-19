@@ -1,4 +1,4 @@
-package com.roca12.misiontic2022.tiendalostiburones.BO;
+package com.grupo53.tienda53.BO;
 
 import java.util.ArrayList;
 
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roca12.misiontic2022.tiendalostiburones.DAO.UsuarioDAO;
-import com.roca12.misiontic2022.tiendalostiburones.DTO.UsuarioVO;
+
+import com.grupo53.tienda53.DAO.UsuarioDAO;
+import com.grupo53.tienda53.DTO.UsuarioVO;
 
 
 @RestController
 public class UsuarioController {
-	
 	/*
 	 * @GetMapping obtener o buscar
 	 * @PostMapping insertar o agregar
@@ -50,7 +50,4 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		Dao.registrarUsuario(user);
 	}
-	
-	
-
 }
