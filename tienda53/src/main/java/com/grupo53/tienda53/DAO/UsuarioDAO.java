@@ -1,29 +1,21 @@
 package com.grupo53.tienda53.DAO;
 
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
-
 import com.grupo53.tienda53.DTO.UsuarioVO;
-
 
 /**
  * Clase que permite el acceso a la base de datos
  *
  */
 public class UsuarioDAO {
-
 	/**
 	 * Permite registrar un Usuario nuevo
 	 * 
 	 * @param user
 	 */
-
 	public void registrarUsuario(UsuarioVO user) {
-		//llama y crea una instancia de la clase encargada de hacer la conexión
+		
 		Conexion conex = new Conexion();
 
 		try {
@@ -41,9 +33,9 @@ public class UsuarioDAO {
 			
 			//se ejecuta la sentencia en la base de datos
 			estatuto.executeUpdate(sentencia);
-			//impresión en consola para verificación 
+			//impresiÃ³n en consola para verificaciÃ³n 
 			System.out.println("Registrado " + sentencia);
-			//cerrando la sentencia y la conexión
+			//cerrando la sentencia y la conexiÃ³n
 			estatuto.close();
 			conex.desconectar();
 
@@ -69,25 +61,19 @@ public class UsuarioDAO {
 	 * @param documento
 	 * @return
 	 */
-	public ArrayList<UsuarioVO> consultarUsuario(String usuario) {
-		
+	public ArrayList<UsuarioVO> consultarUsuario(String usuario) {	
 		//lista que contendra el o los usuarios obtenidos
-		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();
-		
-		//instancia de la conexión
+		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();		
+		//instancia de la conexiÃ³n
 		Conexion conex = new Conexion();
-
 		try {
 			//prepare la sentencia en la base de datos
 			PreparedStatement consulta = conex.getConnection()
-					.prepareStatement("SELECT * FROM usuarios where usuario = ? ");
-			
+					.prepareStatement("SELECT * FROM usuarios where usuario = ? ");		
 			// se cambia el comodin ? por el dato que ha llegado en el parametro de la funcion
-			consulta.setString(1, usuario);
-			
+			consulta.setString(1, usuario);			
 			//ejecute la sentencia
-			ResultSet res = consulta.executeQuery();
-			
+			ResultSet res = consulta.executeQuery();			
 			//cree un objeto basado en la clase entidad con los datos encontrados
 			if (res.next()) {
 				UsuarioVO Usuario = new UsuarioVO();
@@ -99,8 +85,7 @@ public class UsuarioDAO {
 
 				listausuarios.add(Usuario);
 			}
-			
-			//cerrar resultado, sentencia y conexión
+			//cerrar resultado, sentencia y conexiÃ³n
 			res.close();
 			consulta.close();
 			conex.desconectar();
@@ -130,7 +115,7 @@ public class UsuarioDAO {
 		//lista que contendra el o los usuarios obtenidos
 		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();
 		
-		//instancia de la conexión
+		//instancia de la conexiÃ³n
 		Conexion conex = new Conexion();
 
 		try {
@@ -152,7 +137,7 @@ public class UsuarioDAO {
 				listausuarios.add(Usuario);
 			}
 			
-			//cerrar resultado, sentencia y conexión
+			//cerrar resultado, sentencia y conexiÃ³n
 			res.close();
 			consulta.close();
 			conex.desconectar();
@@ -186,13 +171,13 @@ public class UsuarioDAO {
 			//preparando sentencia a realizar
 			String sentencia = "delete from usuarios where cedula_usuario=" + cedula_usuario + ";";
 			
-			//impresion de verificación
+			//impresion de verificaciÃ³n
 			System.out.println("Registrado " + sentencia);
 			
 			//ejecutando la sentencia en la base de datos
 			consulta.execute(sentencia);
 			
-			//cerrando sentencia y conexión
+			//cerrando sentencia y conexiÃ³n
 			consulta.close();
 			conex.desconectar();
 
@@ -232,10 +217,10 @@ public class UsuarioDAO {
 			//ejecuta la sentencia 
 			estatuto.executeUpdate(sentencia);
 			
-			//verificación por consola de la sentencia
+			//verificaciÃ³n por consola de la sentencia
 			System.out.println("Registrado " + sentencia);
 			
-			//cerrando sentencia y conexión
+			//cerrando sentencia y conexiÃ³n
 			estatuto.close();
 			conex.desconectar();
 
