@@ -1,27 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
-
 <head>
 
 
-	<!-- paquete de caracteres -->
-	<meta charset="utf-8">
-	<!-- Tamaño de la pantalla -->
-	<meta name="viewport" content="width=device-width">
-	<!-- titulo de la pestaña -->
-	<title>Clientes</title>
-	<!-- bootstrap-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	 crossorigin="anonymous">
+<!-- paquete de caracteres -->
+<meta charset="utf-8">
+<!-- Tamaño de la pantalla -->
+<meta name="viewport" content="width=device-width">
+<!-- titulo de la pestaña -->
+<title>Insertando cliente</title>
+<!-- bootstrap-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 
-	<!-- font awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	 crossorigin="anonymous">
+<!-- font awesome -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
 
-	<!-- Cargando mi hoja de estilo -->
-	<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- Cargando mi hoja de estilo -->
+<link href="style.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -68,7 +72,7 @@
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Usuario creado con exito</div>
 
-			<form id="form1">
+		<form id="form1">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
 						type="text" class="form-control"
@@ -105,25 +109,35 @@
 						aria-describedby="basic-addon5" required id="email_usuario">
 				</div>
 
-				
+
+			<button type="button" class="btn btn-success" onclick="enviar()">
+				<i class="fas fa-check"></i> Insertar nuevo cliente
+			</button>
+
+
+
+
+			<h1>
+				<i class="fas fa-cogs"></i> Operaciones
+			</h1>
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success"
 						onclick="window.location.href='/insertarusuario.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar
+						<i class="fas fa-plus-circle"></i> Agregar usuario
 					</button>
 					<button type="button" class="btn btn-danger">
-						<i class="fas fa-trash"></i> Eliminar
+						<i class="fas fa-trash"></i> Eliminar usuario
 					</button>
 					<button type="button" class="btn btn-warning">
-						<i class="fas fa-pen-alt"></i> Actualizar
+						<i class="fas fa-pen-alt"></i> Actualizar usuario
 					</button>
 					<button type="button" class="btn btn-primary">
-						<i class="fas fa-search"></i> Buscar
+						<i class="fas fa-search"></i> Buscar un usuario
 					</button>
 					<button type="button" class="btn btn-primary"
 					onclick="window.location.href='/listausuarios.jsp'">
-						<i class="fas fa-search"></i> Listar todos los clientes
+						<i class="fas fa-search"></i> Listar todos los usuarios
 					</button>
 				</div>
 
@@ -190,7 +204,6 @@
 				document.getElementById("password").value = "";
 				document.getElementById("user").value = "";
 	 			xhr.send(formData);
-
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
