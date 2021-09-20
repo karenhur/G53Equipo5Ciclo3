@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Lista de usuarios</title>
 <!-- bootstrap-->
 <link
@@ -59,10 +59,9 @@
 </head>
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda Los Tiburones</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-shopping-cart" item-width="30" item-height="24"></i> Tienda generica</a>
 		</div>
 	</nav>
 
@@ -76,12 +75,11 @@
 
 
 
-	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+	<nav class="navbar fixed-bottom navbar-light" style="background-color: #cad46e;">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por <i
-					class="fas fa-code-branch"></i></a>
+				<a class="navbar-brand links" href="#">
+					DiseÃ±ado y programado por </a>
 			</div>
 			<!--  
 			<div class="col-4">
