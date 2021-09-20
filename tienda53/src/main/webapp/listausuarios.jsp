@@ -79,7 +79,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#">
-					Diseñado y programado por </a>
+					Tienda generica </a>
 			</div>
 			<!--  
 			<div class="col-4">
