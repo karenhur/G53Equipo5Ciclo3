@@ -121,23 +121,23 @@
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-				<div class="row">
+				
 					<button type="button" class="btn btn-success"
 						onclick="window.location.href='/insertarusuario.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar usuario
+						<i class="fas fa-plus-circle"></i> Agregar
 					</button>
 					<button type="button" class="btn btn-danger">
-						<i class="fas fa-trash"></i> Eliminar usuario
+						<i class="fas fa-trash"></i> Eliminar 
 					</button>
 					<button type="button" class="btn btn-warning">
-						<i class="fas fa-pen-alt"></i> Actualizar usuario
+						<i class="fas fa-pen-alt"></i> Actualizar
 					</button>
 					<button type="button" class="btn btn-primary">
-						<i class="fas fa-search"></i> Buscar un usuario
+						<i class="fas fa-search"></i> Buscar
 					</button>
 					<button type="button" class="btn btn-primary"
 					onclick="window.location.href='/listausuarios.jsp'">
-						<i class="fas fa-search"></i> Listar todos los usuarios
+						<i class="fas fa-search"></i> Listar todos 
 					</button>
 				</div>
 
@@ -155,8 +155,8 @@
 	</nav>
 	<script>
 		function enviar() {
-			var x = document.getElementById("user").value;
-			var y = document.getElementById("cedula_usuario").value;
+			var x = document.getElementById("cedula_cliente").value;
+			var y = document.getElementById("nombre_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarusuarios', false);
@@ -185,11 +185,11 @@
 			
 			if (coincidencia==false){
 				var formData = new FormData();
-	 			formData.append("cedula_usuario", document.getElementById("cedula_usuario").value);
-	 			formData.append("email_usuario", document.getElementById("email_usuario").value);
-	 			formData.append("nombre_usuario", document.getElementById("nombre_usuario").value);
-	 			formData.append("password",document.getElementById("password").value);
-	 			formData.append("usuario",document.getElementById("user").value);
+	 			formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
+        formData.append("nombre_cliente", document.getElementById("nombre_cliente").value);
+        formData.append("direccion_cliente",document.getElementById("direccion_cliente").value);
+        formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
+	 			formData.append("email_cliente", document.getElementById("email_cliente").value);
 	 			var xhr = new XMLHttpRequest();
 	 			xhr.open("POST", "http://localhost:8080/registrarusuario");
 	 			
@@ -198,22 +198,22 @@
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 				
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("nombre_cliente").value = "";
+				document.getElementById("direccion_cliente").value = "";
+				document.getElementById("telefono_cliente").value = "";
+				document.getElementById("email_cliente").value = "";
 	 			xhr.send(formData);
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("nombre_cliente").value = "";
+				document.getElementById("direccion_cliente").value = "";
+				document.getElementById("telefono_cliente").value = "";
+				document.getElementById("email_cliente").value = "";
 			}	
 		}
 	</script>
