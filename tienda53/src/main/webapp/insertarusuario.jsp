@@ -36,17 +36,17 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda generica</a>
+			<a class="navbar-brand links" href="login.jsp"><i
+				class="fas fa-shopping-cart"></i> Tienda generica</a>
 		</div>
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
@@ -154,7 +154,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por Diego Rodriguez <i
+					Diseñado y programado por Equipo 5 Grupo 53 <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 		</div>
@@ -175,13 +175,13 @@
 			for (i = 0; i < usuarios.length; i++) {
 				console.log(usuarios[i].usuario);
 				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario ===x ) {
+				if (usuarios[i].usuario ==x ) {
 					console.log(usuarios[i].usuario +" "+x);	
 					coincidencia =true
 					break;
 				}
 				
-				if (usuarios[i].cedula_usuario ===y ) {
+				if (usuarios[i].cedula_usuario ==y ) {
 					console.log(usuarios[i].cedula_usuario +" "+y);	
 					coincidencia =true
 					break;

@@ -90,7 +90,7 @@ public class UsuarioDAO {
 			
 			//cree un objeto basado en la clase entidad con los datos encontrados
 			if (res.next()) {
-				UsuarioVO Usuario = new UsuarioVO();
+				UsuarioVO Usuario = new UsuarioVO(01,"kare@","karen","karen","karen");
 				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
 				Usuario.setEmail_usuario(res.getString("email_usuario"));
 				Usuario.setNombre_usuario(res.getString("nombre_usuario"));
@@ -142,7 +142,7 @@ public class UsuarioDAO {
 			
 			//cree un objeto para cada encontrado en la base de datos basado en la clase entidad con los datos encontrados
 			while (res.next()) {
-				UsuarioVO Usuario = new UsuarioVO();
+				UsuarioVO Usuario = new UsuarioVO(01,"kare@","karen","karen","karen");
 				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
 				Usuario.setEmail_usuario(res.getString("email_usuario"));
 				Usuario.setNombre_usuario(res.getString("nombre_usuario"));

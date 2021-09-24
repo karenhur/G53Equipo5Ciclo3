@@ -6,12 +6,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.grupo53.tienda53.DAO.ClientesDAO;
 
 import com.grupo53.tienda53.DTO.ClientesVO;
 
-
+@RestController
 public class ClientesController {
 	/*
 	 * @GetMapping obtener o buscar

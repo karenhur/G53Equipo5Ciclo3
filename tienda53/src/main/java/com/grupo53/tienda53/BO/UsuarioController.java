@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.grupo53.tienda53.DAO.UsuarioDAO;
 import com.grupo53.tienda53.DTO.UsuarioVO;
 
@@ -50,4 +49,7 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		Dao.registrarUsuario(user);
 	}
+	
+
+	
 }
