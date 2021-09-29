@@ -1,7 +1,5 @@
 package com.grupo53.tienda53.BO;
 
-
-
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +14,6 @@ import com.grupo53.tienda53.DTO.UsuarioVO;
 
 @RestController
 public class UsuarioController {
-	
 	/*
 	 * @GetMapping obtener o buscar
 	 * @PostMapping insertar o agregar
@@ -50,9 +47,9 @@ public class UsuarioController {
 	@PutMapping("/actualizarusuarios")
 	public void actualizarUsuario(UsuarioVO user) {
 		UsuarioDAO Dao = new UsuarioDAO();
-		Dao.registrarUsuario(user);
+		Dao.actualizarUsuario(user);
 	}
 	
-	
 
+	
 }
