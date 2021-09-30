@@ -7,10 +7,10 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tama√±o de la pantalla -->
+<!-- TamaÒo de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pesta√±a -->
-<title>Lista de usuarios</title>
+<!-- titulo de la pestaÒa -->
+<title>Lista de clientes</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -29,31 +29,31 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarusuarios";
-	function loadusuarios() {
+	var baseurl = "http://localhost:8080/listarclientes";
+	function loadclientes() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var usuarios = JSON.parse(xmlhttp.responseText);
+				var clientes = JSON.parse(xmlhttp.responseText);
 				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
 				var main = "";
-				for (i = 0; i < usuarios.length; i++) {
-					main += "<tr><td>" + usuarios[i].cedula_usuario
-							+ "</td><td>" + usuarios[i].email_usuario
-							+ "</td><td>" + usuarios[i].nombre_usuario
-							+ "</td><td>" + usuarios[i].password + "</td><td>"
-							+ usuarios[i].usuario + "</td></tr>";
+				for (i = 0; i < clientes.length; i++) {
+					main += "<tr><td>" + clientes[i].cedula_cliente
+							+ "</td><td>" + clientes[i].nombre_cliente
+							+ "</td><td>" + clientes[i].direccion_cliente
+							+ "</td><td>" + clientes[i].telefono_cliente
+							+ "</td><td>" + clientes[i].email_cliente;
 				}
 				var tblbottom = "</table>";
 				var tbl = tbltop + main + tblbottom;
-				document.getElementById("usuariosinfo").innerHTML = tbl;
+				document.getElementById("clientesinfo").innerHTML = tbl;
 			}
 		};
 		xmlhttp.send();
 	}
 	window.onload = function() {
-		loadusuarios();
+		loadclientes();
 	}
 </script>
 
@@ -92,11 +92,11 @@
 	
 	<div style="padding-left: 5px;">
 	
-		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
+		<h1><i class="fas fa-list-ol"></i> Tabla de clientes</h1>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="usuariosinfo">
+					<div class="col align-self-center" id="clientesinfo">
 					
 					</div>
 	
@@ -106,18 +106,16 @@
 		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
 				<div class="row">
-					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
-
-					<button type="button" class="btn btn-danger" onclick="window.location.href='/eliminarusuario.jsp'">
-					<i class="fas fa-trash"></i> Eliminar usuario</button>
-					<button type="button" class="btn btn-warning" onclick="window.location.href='/actualizarusuario.jsp'">
-					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
-					<button type="button" class="btn btn-primary" onclick="window.location.href='/buscarusuario.jsp'">
-
-					<i class="fas fa-search"></i> Buscar un usuario</button>
-					<button type="button" class="btn btn-primary" onclick="window.location.href='/listausuarios.jsp'">
-					<i class="fas fa-search"></i> Listar todos los usuarios</button>
+					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarclientes.jsp'">
+					<i class="fas fa-plus-circle"></i> Agregar cliente</button>
+					<button type="button" class="btn btn-danger">
+					<i class="fas fa-trash"></i> Eliminar cliente</button>
+					<button type="button" class="btn btn-warning">
+					<i class="fas fa-pen-alt"></i> Actualizar cliente</button>
+					<button type="button" class="btn btn-primary">
+					<i class="fas fa-search"></i> Buscar un cliente</button>
+					<button type="button" class="btn btn-primary"onclick="window.location.href='/listaclientes.jsp'">
+					<i class="fas fa-search"></i> Listar todos los clientes</button>
 				</div>
 			</div>
 	</div>
@@ -127,7 +125,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Dise√±ado y programado por Equipo 5 Grupo 53 <i
+					DiseÒado y programado por Equipo 5 Grupo 53 <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 		</div>

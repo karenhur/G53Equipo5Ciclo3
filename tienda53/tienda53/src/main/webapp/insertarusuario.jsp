@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-
-	pageEncoding="ISO-8859-1"%>
-
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tama√±o de la pantalla -->
+<!-- TamaÒo de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pesta√±a -->
+<!-- titulo de la pestaÒa -->
 <title>Insertando usuario</title>
 <!-- bootstrap-->
 <link
@@ -38,16 +36,12 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-
-
 			<a class="navbar-brand links" href="login.jsp"><i
 				class="fas fa-shopping-cart"></i> Tienda generica</a>
-
 		</div>
 	</nav>
 
 	<!-- Navbar modulos-->
-
 	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
@@ -71,13 +65,11 @@
 			<i class="fas fa-plus-circle"></i> Datos del nuevo usuario
 		</h1>
 		<div class="container">
-
 		
 		
 			<div id="error" class="alert alert-danger visually-hidden"
 					role="alert">Error al crear el usuario, verifique que no exista un usuario con la cedula y usuario dados</div>
 					
-
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Usuario creado con exito</div>
 
@@ -117,11 +109,17 @@
 						aria-describedby="basic-addon5" required id="password">
 				</div>
 
+
+
+
+
 			</form>
 
 			<button type="button" class="btn btn-success" onclick="enviar()">
 				<i class="fas fa-check"></i> Insertar nuevo usuario
 			</button>
+
+
 
 
 			<h1>
@@ -133,21 +131,17 @@
 						onclick="window.location.href='/insertarusuario.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar usuario
 					</button>
-
-					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarusuario.jsp'">
+					<button type="button" class="btn btn-danger" onclick="window.location.href='/eliminarusuario.jsp'">
 						<i class="fas fa-trash"></i> Eliminar usuario
 					</button>
-					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarusuario.jsp'">
+					<button type="button" class="btn btn-warning" onclick="window.location.href='/actualizarusuario.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar usuario
 					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarusuario.jsp'">
+					<button type="button" class="btn btn-primary" onclick="window.location.href='/buscarusuario.jsp'">
 						<i class="fas fa-search"></i> Buscar un usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listausuarios.jsp'">
+					onclick="window.location.href='/listausuarios.jsp'">
 						<i class="fas fa-search"></i> Listar todos los usuarios
 					</button>
 				</div>
@@ -160,9 +154,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-
-					Dise√±ado y programado por Equipo 5 Grupo 53 <i
-
+					DiseÒado y programado por Equipo 5 Grupo 53 <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 		</div>
@@ -175,7 +167,6 @@
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarusuarios', false);
 			req.send(null);
-
 			var usuarios=null;
 			if (req.status == 200)
 				usuarios=JSON.parse(req.responseText);
@@ -208,23 +199,19 @@
 	 			var xhr = new XMLHttpRequest();
 	 			xhr.open("POST", "http://localhost:8080/registrarusuario");
 	 			
-
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
-
+				
 				document.getElementById("cedula_usuario").value = "";
 				document.getElementById("email_usuario").value = "";
 				document.getElementById("nombre_usuario").value = "";
 				document.getElementById("password").value = "";
 				document.getElementById("user").value = "";
+	 			xhr.send(formData);
 
-				xhr.send(formData);
-
-			} else {
-
-
+			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
@@ -234,9 +221,7 @@
 				document.getElementById("nombre_usuario").value = "";
 				document.getElementById("password").value = "";
 				document.getElementById("user").value = "";
-
 			}	
-
 		}
 	</script>
 

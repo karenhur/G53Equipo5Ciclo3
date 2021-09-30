@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tama√±o de la pantalla -->
+<!-- TamaÒo de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pesta√±a -->
+<!-- titulo de la pestaÒa -->
 <title>Lista de usuarios</title>
 <!-- bootstrap-->
 <link
@@ -108,13 +108,11 @@
 				<div class="row">
 					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
 					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
-
 					<button type="button" class="btn btn-danger" onclick="window.location.href='/eliminarusuario.jsp'">
 					<i class="fas fa-trash"></i> Eliminar usuario</button>
 					<button type="button" class="btn btn-warning" onclick="window.location.href='/actualizarusuario.jsp'">
 					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
 					<button type="button" class="btn btn-primary" onclick="window.location.href='/buscarusuario.jsp'">
-
 					<i class="fas fa-search"></i> Buscar un usuario</button>
 					<button type="button" class="btn btn-primary" onclick="window.location.href='/listausuarios.jsp'">
 					<i class="fas fa-search"></i> Listar todos los usuarios</button>
@@ -127,7 +125,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Dise√±ado y programado por Equipo 5 Grupo 53 <i
+					DiseÒado y programado por Equipo 5 Grupo 53 <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 		</div>

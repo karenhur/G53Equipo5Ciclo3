@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.grupo53.tienda53.DAO.ClientesDAO;
-
 import com.grupo53.tienda53.DTO.ClientesVO;
 
 
@@ -28,14 +27,11 @@ public class ClientesController {
 		Dao.registrarCliente(user);
 	}
 
-
-	@GetMapping("/consultarcliente")
-	public ArrayList<ClientesVO> consultarClientes(Integer cedula) {
+	@GetMapping("/consultarclientes")
+	public ArrayList<ClientesVO> consultarClientes(Integer cedula_cliente) {
 		ClientesDAO Dao = new ClientesDAO();
-		return Dao.consultarClientes(cedula);
+		return Dao.consultarClientes(cedula_cliente);
 	}
-
-
 
 	@GetMapping("/listarclientes")
 	public ArrayList<ClientesVO> listaDeClientes() {
@@ -59,7 +55,4 @@ public class ClientesController {
 	
 
 	
-
-
 }
-
