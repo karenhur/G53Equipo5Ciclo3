@@ -12,6 +12,7 @@ import com.grupo53.tienda53.DAO.ClientesDAO;
 
 import com.grupo53.tienda53.DTO.ClientesVO;
 
+
 @RestController
 public class ClientesController {
 	/*
@@ -25,6 +26,13 @@ public class ClientesController {
 	public void registrarCliente(ClientesVO user) {
 		ClientesDAO Dao = new ClientesDAO();
 		Dao.registrarCliente(user);
+	}
+
+
+	@GetMapping("/consultarcliente")
+	public ArrayList<ClientesVO> consultarClientes(Integer cedula) {
+		ClientesDAO Dao = new ClientesDAO();
+		return Dao.consultarClientes(cedula);
 	}
 
 
@@ -51,4 +59,7 @@ public class ClientesController {
 	
 
 	
+
+
 }
+

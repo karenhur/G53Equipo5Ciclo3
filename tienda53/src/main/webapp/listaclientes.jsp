@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Lista de clientes</title>
 <!-- bootstrap-->
 <link
@@ -106,16 +106,28 @@
 		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
 				<div class="row">
-					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarclientes.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar cliente</button>
-					<button type="button" class="btn btn-danger">
-					<i class="fas fa-trash"></i> Eliminar cliente</button>
-					<button type="button" class="btn btn-warning">
-					<i class="fas fa-pen-alt"></i> Actualizar cliente</button>
-					<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i> Buscar un cliente</button>
-					<button type="button" class="btn btn-primary"onclick="window.location.href='/listaclientes.jsp'">
-					<i class="fas fa-search"></i> Listar todos los clientes</button>
+
+					<button type="button" class="btn btn-success"
+						onclick="window.location.href='/insertarclientes.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar cliente
+					</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='/eliminarcliente.jsp'">
+						<i class="fas fa-trash"></i> Eliminar cliente
+					</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='/actualizarcliente.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar cliente
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/buscarcliente.jsp'">
+						<i class="fas fa-search"></i> Buscar un cliente
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='/listaclientes.jsp'">
+						<i class="fas fa-search"></i> Listar todos los clientes
+					</button>
+
 				</div>
 			</div>
 	</div>
@@ -125,7 +137,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por Equipo 5 Grupo 53 <i
+					DiseÃ±ado y programado por Equipo 5 Grupo 53 <i
 					class="fas fa-code-branch"></i></a>
 			</div>
 		</div>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.grupo53.tienda53.DTO.ClientesVO;
 
 
+
 public class ClientesDAO {
 	
 	/**
@@ -52,6 +53,52 @@ public class ClientesDAO {
 		}
 
 	}
+
+	public ArrayList<ClientesVO> consultarClientes(Integer client) {	
+		//lista que contendra el o los Clientes obtenidos
+		ArrayList<ClientesVO> listaClientes = new ArrayList<ClientesVO>();		
+		//instancia de la conexión
+		Conexion conex = new Conexion();
+		try {
+			//prepare la sentencia en la base de datos
+			PreparedStatement consulta = conex.getConnection()
+					.prepareStatement("SELECT * FROM clientes where cedula_cliente = ? ");		
+			// se cambia el comodin ? por el dato que ha llegado en el parametro de la funcion
+			consulta.setInt(1, client);			
+			//ejecute la sentencia
+			ResultSet res = consulta.executeQuery();			
+			//cree un objeto basado en la clase entidad con los datos encontrados
+			if (res.next()) {
+				ClientesVO newcliente = new ClientesVO();
+				newcliente.setCedula_cliente(Integer.parseInt(res.getString("cedula_cliente")));
+				newcliente.setDireccion_cliente(res.getString("direccion_cliente"));
+				newcliente.setEmail_cliente(res.getString("email_cliente"));
+				newcliente.setNombre_cliente(res.getString("nombre_cliente"));
+				newcliente.setTelefono_cliente(res.getString("telefono_cliente"));
+
+				listaClientes.add(newcliente);
+			}
+			//cerrar resultado, sentencia y conexión
+			res.close();
+			consulta.close();
+			conex.desconectar();
+
+		} catch (SQLException e) {
+			//si hay un error en el sql mostrarlo
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar el Cliente");
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+		} catch (Exception e) {
+			//si hay cualquier otro error mostrarlo
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar el Cliente");
+			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
+		}
+		return listaClientes;
+	}
+
 
 	/**
 	 * permite consultar la lista de todos los usuarios
@@ -157,8 +204,10 @@ public void actualizarClientes (ClientesVO clientes) {
 		String sentencia = "UPDATE clientes "
 				+ "SET email_cliente = '"+clientes.getEmail_cliente()+"',"
 				+ "nombre_cliente = '"+clientes.getNombre_cliente()+"',"
-				+ "direccion_cliente "+clientes.getDireccion_cliente()+"',"
-				+ "telefono_cliente"+clientes.getTelefono_cliente()+"' "
+
+				+ "direccion_cliente = ' "+clientes.getDireccion_cliente()+"',"
+				+ "telefono_cliente = '"+clientes.getTelefono_cliente()+"' "
+
 				+ "WHERE cedula_cliente = "+clientes.getCedula_cliente()+";";
 		
 		//ejecuta la sentencia 
