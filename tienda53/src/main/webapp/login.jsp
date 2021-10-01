@@ -44,7 +44,7 @@
         <label for="inputuser"<i class="far fa-user"></i> Usuario</label> 
         <input type="text" id="inputuser"
         placeholder= "Ingresar Usuario">
-
+		
          <!-- PASWORD -->
         <label for="pasword"<i class="fas fa-key"></i> Contraseña</label>
         <input type="password" id="inputpass" placeholder="Ingresar Contraseña">    
