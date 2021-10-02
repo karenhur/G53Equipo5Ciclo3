@@ -14,6 +14,7 @@ import com.grupo53.tienda53.DTO.UsuarioVO;
 
 @RestController
 public class UsuarioController {
+	
 	/*
 	 * @GetMapping obtener o buscar
 	 * @PostMapping insertar o agregar
@@ -38,6 +39,7 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		return Dao.listaDeUsuarios();
 	}
+	
 	@DeleteMapping("/eliminarusuario")
 	public void eliminarUsuario(Integer cedula_usuario) {
 		UsuarioDAO Dao = new UsuarioDAO();
@@ -50,6 +52,6 @@ public class UsuarioController {
 		Dao.actualizarUsuario(user);
 	}
 	
-
 	
+
 }

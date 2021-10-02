@@ -27,11 +27,12 @@ public class ClientesController {
 		Dao.registrarCliente(user);
 	}
 
-	@GetMapping("/consultarclientes")
-	public ArrayList<ClientesVO> consultarClientes(Integer cedula_cliente) {
+	@GetMapping("/consultarcliente")
+	public ArrayList<ClientesVO> consultarClientes(Integer cedula) {
 		ClientesDAO Dao = new ClientesDAO();
-		return Dao.consultarClientes(cedula_cliente);
+		return Dao.consultarClientes(cedula);
 	}
+
 
 	@GetMapping("/listarclientes")
 	public ArrayList<ClientesVO> listaDeClientes() {
