@@ -27,6 +27,35 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
+
+<script>
+function loadproductos() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", baseurl, true);
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+					var productos = JSON.parse(xmlhttp.responseText);
+					var tbltop = "<table class='table table-dark table-striped'><tr><th>Codigo</th><th>IVA</th><th>Nit proveedor</th><th>Nombre producto</th><th>Precio compra</th><th>Precio venta</th></tr>";
+					var main = "";
+					for (i = 0; i < productos.length; i++) {
+						main += "<tr><td>" + productos[i].codigo_producto
+								+ "</td><td>" + productos[i].iva_compra
+								+ "</td><td>" + productos[i].nit_proveedor
+								+ "</td><td>" + productos[i].nombre_producto 
+								+ "</td><td>" + productos[i].precio_compra
+								+ "</td><td>"+ productos[i].precio_venta + "</td></tr>";
+					}
+					var tblbottom = "</table>";
+					var tbl = tbltop + main + tblbottom;
+					document.getElementById("productossinfo").innerHTML = tbl;
+				}
+			};
+			xmlhttp.send();
+		}
+		window.onload = function() {
+			loadproductos();
+		}
+	</script>
 </head>
 
 
@@ -93,7 +122,7 @@
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="usuariosinfo">
+					<div class="col align-self-center" id="productosinfo">
 					
 					</div>
 	
@@ -175,6 +204,33 @@
 
 				document.getElementById("archivo").value = "";
 			}
+		}
+		
+		function loadproductos() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", baseurl, true);
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+					var productos = JSON.parse(xmlhttp.responseText);
+					var tbltop = "<table class='table table-dark table-striped'><tr><th>Codigo</th><th>IVA</th><th>Nit proveedor</th><th>Nombre producto</th><th>Precio compra</th><th>Precio venta</th></tr>";
+					var main = "";
+					for (i = 0; i < productos.length; i++) {
+						main += "<tr><td>" + productos[i].codigo_producto
+								+ "</td><td>" + productos[i].iva_compra
+								+ "</td><td>" + productos[i].nit_proveedor
+								+ "</td><td>" + productos[i].nombre_producto 
+								+ "</td><td>" + productos[i].precio_compra
+								+ "</td><td>"+ productos[i].precio_venta + "</td></tr>";
+					}
+					var tblbottom = "</table>";
+					var tbl = tbltop + main + tblbottom;
+					document.getElementById("productossinfo").innerHTML = tbl;
+				}
+			};
+			xmlhttp.send();
+		}
+		window.onload = function() {
+			loadproductos();
 		}
 	</script>
 
