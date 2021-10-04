@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +60,7 @@
 
 <body>
 	<!-- Navbar-->
-	<nav "navbar fixed-bottom navbar-light" style="background-color: #3c3c3c;">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
 			<a class="navbar-brand link" href="login.jsp" ><i
 				class="fas fa-shopping-cart"></i>Tienda Generica</a>
@@ -70,7 +68,7 @@
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-light" style="background-color: #cad46e">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
@@ -105,7 +103,6 @@
 	
 		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
-				<div class="row">
 					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
 					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
 
@@ -123,12 +120,11 @@
 	</div>
 
 
-	<nav class="navbar fixed-bottom navbar-dark bg-dark;">
+	<nav class="navbar fixed-bottom navbar-light" style="background-color: #cad46e;">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					DiseÃ±ado y programado por Equipo 5 Grupo 53 <i
-					class="fas fa-code-branch"></i></a>
+				<a class="navbar-brand links" href="#">
+					Diseñado y programado por Equipo 5 Grupo 53 </a>
 			</div>
 		</div>
 	</nav>

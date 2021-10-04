@@ -62,7 +62,7 @@
 
 <body>
 	<!-- Navbar-->
-	<nav "navbar fixed-bottom navbar-light" style="background-color: #3c3c3c;">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
 			<a class="navbar-brand link" href="login.jsp" ><i
 				class="fas fa-shopping-cart"></i>Tienda Generica</a>
@@ -70,7 +70,7 @@
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-light" style="background-color: #cad46e">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
@@ -105,8 +105,7 @@
 	
 		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
-				<div class="row">
-
+				
 					<button type="button" class="btn btn-success"
 						onclick="window.location.href='/insertarclientes.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar cliente

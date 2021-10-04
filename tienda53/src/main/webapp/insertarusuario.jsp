@@ -36,7 +36,7 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
 
 
@@ -48,7 +48,7 @@
 
 	<!-- Navbar modulos-->
 
-	<nav class="navbar navbar-light" style="background-color: #cad46e;">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
@@ -127,7 +127,7 @@
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-				<div class="row">
+			
 					<button type="button" class="btn btn-success"
 						onclick="window.location.href='/insertarusuario.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar usuario
