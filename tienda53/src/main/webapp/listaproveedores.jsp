@@ -65,7 +65,7 @@
 	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
 			<a class="navbar-brand link" href="login.jsp" ><i
-				class="fas fa-shopping-cart"></i>Tienda Generica</a>
+				class="fas fa-shopping-cart"></i> Tienda Generica</a>
 		</div>
 	</nav>
 
@@ -131,7 +131,14 @@
 			</div>
 	</div>
 
-
+<nav class="navbar fixed-bottom navbar-light" >
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a class="navbar-brand links" href="#">
+					Diseñado y programado por Equipo 5 Grupo 53 </a>
+			</div>
+		</div>
+	</nav>
 
 
 </body>

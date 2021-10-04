@@ -36,12 +36,12 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i class="fas fa-shopping-cart" item-width="30" item-height="24"></i>  Tienda generica</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-shopping-cart" item-width="30" item-height="24"></i>  Tienda Generica</a>
 		</div>
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
@@ -147,11 +147,11 @@
 		</div>
 
 	</div>
-	<nav class="navbar fixed-bottom navbar-light" style="background-color: #cad46e;">
+	<nav class="navbar fixed-bottom navbar-light" >
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#">
-					Tienda generica </a>
+					Diseñado y programado por Equipo 5 Grupo 53 </a>
 			</div>
 		</div>
 	</nav>
