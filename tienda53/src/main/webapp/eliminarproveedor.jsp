@@ -134,7 +134,7 @@
 			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores',false);
 			req.send(null);
 			var proveedores = null;
 			if (req.status == 200)
@@ -156,7 +156,7 @@
 				var nit=document.getElementById("nit_proveedor").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit_proveedor="+nit);
+				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit="+nit);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
