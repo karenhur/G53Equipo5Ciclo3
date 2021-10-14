@@ -1,32 +1,21 @@
-package com.grupo53.tienda53.DTO;
+package com.grupo53.tiendagenerica.DTO;
 
 import java.io.Serializable;
 
-public class UsuarioVO implements Serializable{
+public class UsuarioVO implements Serializable {
+
+	/*todas la clases de DTO deben estar serializadas*/
 	
-	private static final long serialVersionUID =1L;
+	private static final long serialVersionUID = 1L;
 	
 	private Integer cedula_usuario;
 	private String email_usuario;
 	private String nombre_usuario;
 	private String password;
 	private String usuario;
-	/**
-	 * @param cedula_usuario
-	 * @param email_usuario
-	 * @param nombre_usuario
-	 * @param password
-	 * @param usuario
-	 */
-	public UsuarioVO(Integer cedula_usuario, String email_usuario, String nombre_usuario, String password,
-			String usuario) {
-		super();
-		this.cedula_usuario = cedula_usuario;
-		this.email_usuario = email_usuario;
-		this.nombre_usuario = nombre_usuario;
-		this.password = password;
-		this.usuario = usuario;
-	}
+	
+	/*por defecto el toma el constructor vacio*/
+	
 	/**
 	 * @return the cedula_usuario
 	 */
@@ -89,5 +78,5 @@ public class UsuarioVO implements Serializable{
 	}
 	
 	
-
+	
 }
