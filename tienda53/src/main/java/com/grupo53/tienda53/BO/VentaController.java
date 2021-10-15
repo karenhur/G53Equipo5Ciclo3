@@ -43,5 +43,10 @@ public class VentaController {
 		Dao.actualizarVenta(codigo_venta);
 	}
 	
+	@GetMapping("/contadorventa")
+	public Integer contadorVentas() {
+	    VentaDAO Dao = new VentaDAO();
+	    return Dao.contadorVentas();
+	}
 
 }

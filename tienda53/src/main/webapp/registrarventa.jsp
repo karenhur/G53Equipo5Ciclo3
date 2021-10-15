@@ -27,7 +27,20 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 
-
+<script>
+    window.onload = function() {
+        var req = new XMLHttpRequest();
+        req.open('GET', 'http://localhost:8080/contadorventa', false);
+        req.send(null);
+        var cont = null;
+        if (req.status == 200)
+            cont = JSON.parse(req.responseText);
+        console.log(cont.toString());
+        
+        document.getElementById("consecutivo").value=cont;
+        
+    };
+</script>
 </head>
 
 
