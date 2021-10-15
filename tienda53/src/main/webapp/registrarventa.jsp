@@ -154,14 +154,14 @@
 		
 
 	<div class="input-group mb-3">
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch1">
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto1()">
 				<i class="fas fa-search"></i> Buscar
@@ -169,26 +169,26 @@
 		</div>
 		
 			
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-xxl-2">
+		<div class="col-lg-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto1"
 				disabled="disabled">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad1" oninput="calculate1()">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total1"
 				disabled="disabled">
@@ -198,39 +198,39 @@
 
 	<!-- -------------------------------------------------ESPACIO 2 ------------------------------------------------------------------- -->
 	<div class="input-group mb-3">
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch2">
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto2()">
 				<i class="fas fa-search"></i> Buscar
 			</button>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-xxl-2">
+		<div class="col-lg-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto2"
 				disabled="disabled">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad2" oninput="calculate2()">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total2"
 				disabled="disabled" >
@@ -239,39 +239,39 @@
 	</div>
 	<!-- ---------------------------------------------------ESPACIO 3 ----------------------------------------------------------------- -->
 	<div class="input-group mb-3">
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch3">
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto3()">
 				<i class="fas fa-search"></i> Buscar
 			</button>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-xxl-2">
+		<div class="col-lg-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto3"
 				disabled="disabled">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad3" oninput="calculate3()">
 		</div>
-		<div class="col-xxl-1 ms-2">
+		<div class="col-lg-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-xxl-1">
+		<div class="col-lg-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total3"
 				disabled="disabled">
