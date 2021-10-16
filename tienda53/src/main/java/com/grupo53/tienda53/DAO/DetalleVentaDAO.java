@@ -16,15 +16,10 @@ public void registrarDetalleVenta(DetalleVentaVO detalle_venta) {
 			Statement estatuto = conex.getConnection().createStatement();
 			
 			
-			String sentencia = "INSERT INTO detalle_ventas VALUES(" 
-					+ detalle_venta.getCodigo_detalle_venta() + "," + "'"
-					+ detalle_venta.getCantidad() + "'," + "'" 
-					+ detalle_venta.getCodigo_producto() + "'," + "'" 
-					+ detalle_venta.getCodigo_venta()+ "'," + "'" 
-					+ detalle_venta.getValor_total()+ "'," + "'" 
-					+ detalle_venta.getValor_venta()+ "'," + "'" 
-					+ detalle_venta.getValoriva() + "'" 
-					+ ");";
+			String sentencia = "INSERT INTO detalle_ventas VALUES(" + detalle_venta.getCodigo_detalle_venta() + ","
+                    + detalle_venta.getCantidad() + "," + detalle_venta.getCodigo_producto() + ","
+                    + detalle_venta.getCodigo_venta() + "," + detalle_venta.getValor_total() + ","
+                    + detalle_venta.getValor_venta() + "," + detalle_venta.getValoriva() + "" + ");";
 			
 			
 			estatuto.executeUpdate(sentencia);
