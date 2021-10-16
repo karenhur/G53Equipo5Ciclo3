@@ -324,7 +324,7 @@
 		<div>
 			<div class="input-group mb-3">
 
-				<div class="col-lg-3">
+				<div class="col-lg-2">
 					<span class="input-group-text ms-3" id="basic-addon2">Total
 						con IVA</span>
 				</div>
@@ -337,6 +337,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="input-group mb-3">
 	<div class="opciones1">
 		<button type="button" class="btn btn-success"
 			onclick="confirmarventa()">
@@ -344,14 +345,15 @@
 		</button>
 	</div>
 	
-	<div class="opciones1">
-	
+
+	<div class="ms-5">
     <button type="button" class="btn btn-warning"
 		onclick="window.location.reload();">
 	<i class="fas fa-sync-alt"></i> Nueva venta
 	</button>
 
-    </div>
+   
+        </div>
 
 
 
