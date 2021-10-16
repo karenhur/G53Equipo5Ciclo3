@@ -193,7 +193,7 @@ public int contadorVentas() {
         // prepare la sentencia en la base de datos
         PreparedStatement consulta = conex.getConnection()
                 .prepareStatement("SELECT `AUTO_INCREMENT` " + "FROM  INFORMATION_SCHEMA.TABLES "
-                        + "WHERE TABLE_SCHEMA = 'tiendagenerica' " + "AND   TABLE_NAME   = 'ventas';");
+                        + "WHERE TABLE_SCHEMA = 'g53e5' " + "AND   TABLE_NAME   = 'ventas';");
         // ejecute la sentencia
         ResultSet res = consulta.executeQuery();
         // cree un objeto para cada encontrado en la base de datos basado en la clase

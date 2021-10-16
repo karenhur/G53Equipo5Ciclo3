@@ -4,10 +4,10 @@ import java.sql.*;
 
 public class Conexion {
 	
-	static String nombre_bd="tiendagenerica";
-	static String usuario_bd="root";
-	static String password_bd="mintic";
-	static String URL="jdbc:mysql://127.0.0.1/"+nombre_bd;
+	static String nombre_bd="g53e5";
+	static String usuario_bd="admin";
+	static String password_bd="minticroca";
+	static String URL="jdbc:mariadb://tiendasgenericasdr-g9-g38-53.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+nombre_bd;
 	
 	//objeto sin inicializar de la conexión
 		Connection connection = null;
@@ -16,7 +16,7 @@ public class Conexion {
 		public Conexion() {
 			try {
 				// obtenemos el driver de para mysql
-				Class.forName("com.mysql.cj.jdbc.Driver");
+				Class.forName("org.mariadb.jdbc.Driver");
 				// obtenemos la conexión
 				connection = DriverManager.getConnection(URL, usuario_bd, password_bd);
 				
