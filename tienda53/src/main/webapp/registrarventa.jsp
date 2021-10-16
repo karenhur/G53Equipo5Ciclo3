@@ -26,7 +26,6 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
-
 <script>
     window.onload = function() {
         var req = new XMLHttpRequest();
@@ -41,6 +40,7 @@
         
     };
 </script>
+
 </head>
 
 
@@ -167,14 +167,14 @@
 		
 
 	<div class="input-group mb-3">
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch1">
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto1()">
 				<i class="fas fa-search"></i> Buscar
@@ -182,26 +182,26 @@
 		</div>
 		
 			
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-lg-2">
+		<div class="col-xxl-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto1"
 				disabled="disabled">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad1" oninput="calculate1()">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total1"
 				disabled="disabled">
@@ -211,39 +211,39 @@
 
 	<!-- -------------------------------------------------ESPACIO 2 ------------------------------------------------------------------- -->
 	<div class="input-group mb-3">
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch2">
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto2()">
 				<i class="fas fa-search"></i> Buscar
 			</button>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-lg-2">
+		<div class="col-xxl-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto2"
 				disabled="disabled">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad2" oninput="calculate2()">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total2"
 				disabled="disabled" >
@@ -252,39 +252,39 @@
 	</div>
 	<!-- ---------------------------------------------------ESPACIO 3 ----------------------------------------------------------------- -->
 	<div class="input-group mb-3">
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon4">Código</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control" placeholder="Inserte código"
 				aria-describedby="basic-addon1" required id="codigosearch3">
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<button type="button" class="btn btn-primary"
 				onclick="enviarproducto3()">
 				<i class="fas fa-search"></i> Buscar
 			</button>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<span class="input-group-text" id="basic-addon2">Producto</span>
 		</div>
-		<div class="col-lg-2">
+		<div class="col-xxl-2">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="producto3"
 				disabled="disabled">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon4">Cantidad</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				placeholder="Inserte cantidad" aria-describedby="basic-addon1"
 				required id="cantidad3" oninput="calculate3()">
 		</div>
-		<div class="col-lg-1 ms-2">
+		<div class="col-xxl-1 ms-2">
 			<span class="input-group-text" id="basic-addon2">Valor total</span>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xxl-1">
 			<input type="text" class="form-control"
 				aria-describedby="basic-addon2" required id="valor_total3"
 				disabled="disabled">
@@ -343,7 +343,15 @@
 			<i class="far fa-check-circle"></i> Confirmar Venta
 		</button>
 	</div>
-
+	
+	<div class="opciones1">
+	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+    <button type="button" class="btn btn-warning"
+		onclick="window.location.reload();">
+	<i class="fas fa-sync-alt"></i> Nueva venta
+	</button>
+    </div>
+    </div>
 
 
 
@@ -582,29 +590,59 @@
 		}
 
 		function confirmarventa() {
+			
+			try {
 
 			var formData = new FormData();
 			//formData.append("codigo_venta","null");
-			formData.append("cedula_cliente", document
-					.getElementById("cedulasearch").value);
-			formData.append("cedula_usuario", document
-					.getElementById("cedulausuario").value);
-			formData.append("ivaventa",
-					document.getElementById("valoriva").value);
-			formData.append("total_venta", document
-					.getElementById("totalventa").value);
-			formData.append("valor_venta", document
-					.getElementById("valortotal").value);
+			formData.append("codigo_venta", document.getElementById("consecutivo").value);
+			formData.append("cedula_cliente", document.getElementById("cedulasearch").value);
+			formData.append("cedula_usuario", document.getElementById("cedulausuario").value);
+			formData.append("ivaventa",document.getElementById("valoriva").value);
+			formData.append("total_venta", document.getElementById("totalventa").value);
+			formData.append("valor_venta", document.getElementById("valortotal").value);
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", "http://localhost:8080/registrarventa");
-
+			xhr.send(formData);
 			
-			var element = document.getElementById("errorv");
-			element.classList.add("visually-hidden");
-			var element2 = document.getElementById("correctov");
-			element2.classList.remove("visually-hidden");
+			setTimeout(
+					
+					function() {
+						for (i = 1; i < 4; i++) {
+							var actual = document.getElementById(("valor_total" + i.toString()).value);
+							if (actual == 0) {
+								continue;
+							} else {
+								var formData2 = new FormData();
+								//formData2.append("codigo_detalle_venta", );
+								formData2.append("cantidad", document.getElementById(("cantidad" +i.toString())).value);
+								formData2.append("codigo_producto", document.getElementById("codigosearch" +i.toString()).value);
+								formData2.append("codigo_venta",document.getElementById("consecutivo").value);
+								formData2.append("valor_total", document.getElementById("valor_total" +i.toString()).value);
+								formData2.append("valor_venta",document.getElementById("valortotal").value);
+								formData2.append("valoriva",document.getElementById("valoriva").value);
+								var xhr2 = new XMLHttpRequest();
+								xhr2.open("POST","http://localhost:8080/registrardetalleventa");
+								xhr2.send(formData2);
+							}
 
-			document.getElementById("cedulasearch").value = "";
+						}
+						var element = document.getElementById("errorv");
+			            element.classList.add("visually-hidden");
+			            var element2 = document.getElementById("correctov");
+			            element2.classList.remove("visually-hidden");
+					}, 1500);
+
+			} catch (error) {
+				var element = document.getElementById("error");
+				element.classList.remove("visually-hidden");
+				var element2 = document.getElementById("correcto");
+				element2.classList.add("visually-hidden");
+			}
+
+		}
+
+			/*document.getElementById("cedulasearch").value = "";
 			document.getElementById("nombre_cliente1").value = "";
 			document.getElementById("cedulausuario").value = "";
 			document.getElementById("cantidad1").value = "";
@@ -621,32 +659,9 @@
 			document.getElementById("valor_total3").value = "";
 			document.getElementById("valoriva").value = "";
 			document.getElementById("totalventa").value = "";
-			document.getElementById("valortotal").value = "";
-			xhr.send(formData);
+			document.getElementById("valortotal").value = "";*/
 			
-			confirmardetalle()
-		}
 
-		function confirmardetalle() {
-
-			var formData = new FormData();
-			formData.append("cantidad",document.getElementById("cantidad1").value);
-			formData.append("codigo_producto", document.getElementById("codigosearch1").value);
-			formData.append("codigo_venta",document.getElementById("valoriva").value);
-			formData.append("valor_total", document.getElementById("totalventa").value);
-			formData.append("valor_venta", document.getElementById("valortotal").value);
-			formData.append("valoriva",document.getElementById("valoriva").value);
-			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "http://localhost:8080/registrardetalleventa");
-
-			var element = document.getElementById("error");
-			element.classList.add("visually-hidden");
-			var element2 = document.getElementById("correcto");
-			element2.classList.remove("visually-hidden");
-
-			xhr.send(formData);
-
-		}
 	</script>
 
 </body>
