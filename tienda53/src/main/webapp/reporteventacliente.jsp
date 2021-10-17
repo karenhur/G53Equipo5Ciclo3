@@ -38,8 +38,9 @@
 				var main = "";
 				for (i = 0; i < venta_cliente.length; i++) {
 					main += "<tr><td>" + venta_cliente[i].cedula_cliente
-							+ "</td><td>" + venta_cliente[i].nombre_cliente
-							+ venta_cliente[i].total_venta + "</td></tr>";
+					+ "</td><td>" + venta_cliente[i].nombre_cliente
+					+ "</td><td>" + venta_cliente[i].total_venta + "</td></tr>";
+					
 				}
 				var tblbottom = "</table>";
 				var tbl = tbltop + main + tblbottom;
