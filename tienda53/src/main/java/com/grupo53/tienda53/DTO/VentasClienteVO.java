@@ -9,7 +9,7 @@ private static final long serialVersionUID = 1L;
 	
 	private Integer cedula_cliente; 
 	private String nombre_cliente;
-	private Integer valor_total_venta;
+	private Double total_venta;
 	/**
 	 * @return the cedula_cliente
 	 */
@@ -35,29 +35,17 @@ private static final long serialVersionUID = 1L;
 		this.nombre_cliente = nombre_cliente;
 	}
 	/**
-	 * @return the valor_total_venta
+	 * @return the total_venta
 	 */
-	public Integer getValor_total_venta() {
-		return valor_total_venta;
+	public Double getTotal_venta() {
+		return total_venta;
 	}
 	/**
-	 * @param valor_total_venta the valor_total_venta to set
+	 * @param total_venta the total_venta to set
 	 */
-	public void setValor_total_venta(Integer valor_total_venta) {
-		this.valor_total_venta = valor_total_venta;
+	public void setTotal_venta(Double total_venta) {
+		this.total_venta = total_venta;
 	}
-	/**
-	 * @param cedula_cliente
-	 * @param nombre_cliente
-	 * @param valor_total_venta
-	 */
-	public VentasClienteVO(Integer cedula_cliente, String nombre_cliente, Integer valor_total_venta) {
-		super();
-		this.cedula_cliente = cedula_cliente;
-		this.nombre_cliente = nombre_cliente;
-		this.valor_total_venta = valor_total_venta;
-	}	
-	public VentasClienteVO() {
-		super();
-	}
+	
+
 }

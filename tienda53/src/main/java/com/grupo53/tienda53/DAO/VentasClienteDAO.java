@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import com.grupo53.tienda53.DTO.VentasClienteVO;
 
+
 public class VentasClienteDAO {
 	
 	public ArrayList<VentasClienteVO> listaDeVentasClientes() {
@@ -18,7 +19,7 @@ public class VentasClienteDAO {
 
 		try {
 			//prepare la sentencia en la base de datos
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT cedula_cliente, nombre_cliente,(SELECT SUM(valor_venta)FROM ventas WHERE ventas.cedula_cliente=clientes.cedula_cliente) AS valor_total_venta FROM clientes");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT clientes.cedula_cliente, clientes.nombre_cliente, SUM(total_venta) AS total_venta FROM ventas INNER JOIN clientes on clientes.cedula_cliente = ventas.cedula_cliente GROUP BY clientes.cedula_cliente");
 			
 			//ejecute la sentencia
 			ResultSet res = consulta.executeQuery();
@@ -28,7 +29,7 @@ public class VentasClienteDAO {
 				VentasClienteVO VentasCliente = new VentasClienteVO();
 				VentasCliente.setCedula_cliente(Integer.parseInt(res.getString("cedula_cliente")));
 				VentasCliente.setNombre_cliente(res.getString("nombre_cliente"));
-				VentasCliente.setValor_total_venta(Integer.parseInt("valor_total_venta"));
+				VentasCliente.setTotal_venta(Double.parseDouble(res.getString("total_venta")));
 
 				listaventacliente.add(VentasCliente);
 			}

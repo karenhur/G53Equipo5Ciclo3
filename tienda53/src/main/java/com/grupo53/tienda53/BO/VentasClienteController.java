@@ -14,7 +14,7 @@ import com.grupo53.tienda53.DTO.VentasClienteVO;
 public class VentasClienteController {
 	
 	@GetMapping("/listaventacliente")
-	public ArrayList<VentasClienteVO> listaventacliente() {
+	public ArrayList<VentasClienteVO> listaDeVentasClientes() {
 		VentasClienteDAO Dao = new VentasClienteDAO();
 		return Dao.listaDeVentasClientes();
 	}

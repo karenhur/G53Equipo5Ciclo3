@@ -27,31 +27,29 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <script>
-	var baseurl = "http://localhost:8080/listarusuarios";
-	function loadusuarios() {
+	var baseurl = "http://localhost:8080/listaventacliente";
+	function loadventas_clientes() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var usuarios = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
+				var venta_cliente = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula Cliente</th><th>Nombre Cliente</th><th>Total Ventas</th></tr>";
 				var main = "";
-				for (i = 0; i < usuarios.length; i++) {
-					main += "<tr><td>" + usuarios[i].cedula_usuario
-							+ "</td><td>" + usuarios[i].email_usuario
-							+ "</td><td>" + usuarios[i].nombre_usuario
-							+ "</td><td>" + usuarios[i].password + "</td><td>"
-							+ usuarios[i].usuario + "</td></tr>";
+				for (i = 0; i < venta_cliente.length; i++) {
+					main += "<tr><td>" + venta_cliente[i].cedula_cliente
+							+ "</td><td>" + venta_cliente[i].nombre_cliente
+							+ venta_cliente[i].total_venta + "</td></tr>";
 				}
 				var tblbottom = "</table>";
 				var tbl = tbltop + main + tblbottom;
-				document.getElementById("usuariosinfo").innerHTML = tbl;
+				document.getElementById("ventaclienteinfo").innerHTML = tbl;
 			}
 		};
 		xmlhttp.send();
 	}
 	window.onload = function() {
-		loadusuarios();
+		loadventas_clientes();
 	}
 </script>
 
@@ -99,11 +97,11 @@
 	
 		<div style="padding-left: 5px;">
 	
-		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
+		<h1><i class="fas fa-list-ol"></i> Tabla de Ventas por Cliente</h1>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="usuariosinfo">
+					<div class="col align-self-center" id="ventaclienteinfo">
 					
 					</div>
 	
