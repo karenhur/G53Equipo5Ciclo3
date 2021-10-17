@@ -1,28 +1,15 @@
 package com.grupo53.tienda53.DAO;
 
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
-import com.grupo53.tienda53.DTO.UsuarioVO;
+import com.grupo53.tienda53.DTO.ProveedorVO;
 
 
-/**
- * Clase que permite el acceso a la base de datos
- *
- */
-public class UsuarioDAO {
 
-	/**
-	 * Permite registrar un Usuario nuevo
-	 * 
-	 * @param user
-	 */
+public class ProveedorDAO {
 
-	public void registrarUsuario(UsuarioVO user) {
+	public void registrarProveedor(ProveedorVO provider) {
 		//llama y crea una instancia de la clase encargada de hacer la conexión
 		Conexion conex = new Conexion();
 
@@ -31,12 +18,12 @@ public class UsuarioDAO {
 			Statement estatuto = conex.getConnection().createStatement();
 			
 			//String que contiene la sentencia insert a ejecutar
-			String sentencia = "INSERT INTO usuarios VALUES(" 
-					+ user.getCedula_usuario() + "," + "'"
-					+ user.getEmail_usuario() + "'," + "'" 
-					+ user.getNombre_usuario() + "'," + "'" 
-					+ user.getPassword()+ "'," + "'" 
-					+ user.getUsuario() + "'" 
+			String sentencia = "INSERT INTO proveedores VALUES(" 
+					+ provider.getNit_proveedor() + "," + "'"
+					+ provider.getCiudad_proveedor() + "'," + "'" 
+					+ provider.getDireccion_proveedor() + "'," + "'" 
+					+ provider.getNombre_proveedor()+ "'," + "'" 
+					+ provider.getTelefono_proveedor() + "'" 
 					+ ");";
 			
 			//se ejecuta la sentencia en la base de datos
@@ -50,56 +37,44 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo insertar el usuario");
+			System.out.println("No se pudo insertar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo insertar el usuario");
+			System.out.println("No se pudo insertar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
 
 	}
 
-	/**
-	 * permite consultar el Usuario asociado al user enviado como parametro
-	 * 
-	 * @param documento
-	 * @return
-	 */
-	public ArrayList<UsuarioVO> consultarUsuario(String usuario) {
-		
-		//lista que contendra el o los usuarios obtenidos
-		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();
-		
+
+	public ArrayList<ProveedorVO> consultarProveedor(Integer provider) {	
+		//lista que contendra el o los proveedors obtenidos
+		ArrayList<ProveedorVO> listaproveedors = new ArrayList<ProveedorVO>();		
 		//instancia de la conexión
 		Conexion conex = new Conexion();
-
 		try {
 			//prepare la sentencia en la base de datos
 			PreparedStatement consulta = conex.getConnection()
-					.prepareStatement("SELECT * FROM usuarios where usuario = ? ");
-			
+					.prepareStatement("SELECT * FROM proveedores where nit_proveedor = ? ");		
 			// se cambia el comodin ? por el dato que ha llegado en el parametro de la funcion
-			consulta.setString(1, usuario);
-			
+			consulta.setInt(1, provider);			
 			//ejecute la sentencia
-			ResultSet res = consulta.executeQuery();
-			
+			ResultSet res = consulta.executeQuery();			
 			//cree un objeto basado en la clase entidad con los datos encontrados
 			if (res.next()) {
-				UsuarioVO Usuario = new UsuarioVO(01,"kare@","karen","karen","karen");
-				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
-				Usuario.setEmail_usuario(res.getString("email_usuario"));
-				Usuario.setNombre_usuario(res.getString("nombre_usuario"));
-				Usuario.setPassword(res.getString("password"));
-				Usuario.setUsuario(res.getString("usuario"));
+				ProveedorVO newproveedor = new ProveedorVO();
+				newproveedor.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
+				newproveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
+				newproveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
+				newproveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
+				newproveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 
-				listausuarios.add(Usuario);
+				listaproveedors.add(newproveedor);
 			}
-			
 			//cerrar resultado, sentencia y conexión
 			res.close();
 			consulta.close();
@@ -108,48 +83,44 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo consultar el usuario");
+			System.out.println("No se pudo consultar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo consultar el usuario");
+			System.out.println("No se pudo consultar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
-		return listausuarios;
+		return listaproveedors;
 	}
 
-	/**
-	 * permite consultar la lista de todos los usuarios
-	 * 
-	 * @return
-	 */
-	public ArrayList<UsuarioVO> listaDeUsuarios() {
-		//lista que contendra el o los usuarios obtenidos
-		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();
+
+	public ArrayList<ProveedorVO> listaDeProveedores() {
+		//lista que contendra el o los proveedors obtenidos
+		ArrayList<ProveedorVO> listaproveedors = new ArrayList<ProveedorVO>();
 		
 		//instancia de la conexión
 		Conexion conex = new Conexion();
 
 		try {
 			//prepare la sentencia en la base de datos
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM proveedores");
 			
 			//ejecute la sentencia
 			ResultSet res = consulta.executeQuery();
 			
 			//cree un objeto para cada encontrado en la base de datos basado en la clase entidad con los datos encontrados
 			while (res.next()) {
-				UsuarioVO Usuario = new UsuarioVO(01,"kare@","karen","karen","karen");
-				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
-				Usuario.setEmail_usuario(res.getString("email_usuario"));
-				Usuario.setNombre_usuario(res.getString("nombre_usuario"));
-				Usuario.setPassword(res.getString("password"));
-				Usuario.setUsuario(res.getString("usuario"));
+				ProveedorVO newproveedor = new ProveedorVO();
+				newproveedor.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
+				newproveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
+				newproveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
+				newproveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
+				newproveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 
-				listausuarios.add(Usuario);
+				listaproveedors.add(newproveedor);
 			}
 			
 			//cerrar resultado, sentencia y conexión
@@ -160,21 +131,21 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo consultar todos los usuarios");
+			System.out.println("No se pudo consultar todos los proveedores");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo consultar todos los usuarios");
+			System.out.println("No se pudo consultar todos los proveedors");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
 
-		return listausuarios;
+		return listaproveedors;
 	}
 
-	public void eliminarUsuario(Integer cedula_usuario) {
+	public void eliminarProveedor(Integer nit_proveedor) {
 		
 		//instancia de la conexion
 		Conexion conex = new Conexion();
@@ -184,7 +155,7 @@ public class UsuarioDAO {
 			Statement consulta = conex.getConnection().createStatement();
 			
 			//preparando sentencia a realizar
-			String sentencia = "delete from usuarios where cedula_usuario=" + cedula_usuario + ";";
+			String sentencia = "delete from proveedores where nit_proveedor=" + nit_proveedor + ";";
 			
 			//impresion de verificación
 			System.out.println("Registrado " + sentencia);
@@ -199,20 +170,20 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
 
 	}
 
-	public void actualizarUsuario(UsuarioVO user) {
+	public void actualizarProveedor(ProveedorVO provider) {
 		
 		//instancia de conexion
 		Conexion conex = new Conexion();
@@ -222,12 +193,12 @@ public class UsuarioDAO {
 			Statement estatuto = conex.getConnection().createStatement();
 			
 			//String con la sentencia a ejecutar
-			String sentencia = "UPDATE usuarios "
-					+ "SET email_usuario = '"+user.getEmail_usuario()+"',"
-					+ "nombre_usuario = '"+user.getNombre_usuario()+"',"
-					+ "password = '"+user.getPassword()+"',"
-					+ "usuario = '"+user.getUsuario()+"' "
-					+ "WHERE cedula_usuario = "+user.getCedula_usuario()+";";
+			String sentencia = "UPDATE proveedores "
+					+ "SET direccion_proveedor = '"+provider.getDireccion_proveedor()+"',"
+					+ "ciudad_proveedor = '"+provider.getCiudad_proveedor()+"',"
+					+ "nombre_proveedor = '"+provider.getNombre_proveedor()+"',"
+					+ "telefono_proveedor = '"+provider.getTelefono_proveedor()+"' "
+					+ "WHERE nit_proveedor = "+provider.getNit_proveedor()+";";
 			
 			//ejecuta la sentencia 
 			estatuto.executeUpdate(sentencia);
@@ -242,13 +213,13 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			//si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo actualizar  el usuario");
+			System.out.println("No se pudo actualizar  el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			//si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo eliminar el usuario");
+			System.out.println("No se pudo eliminar el proveedor");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
