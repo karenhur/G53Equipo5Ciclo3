@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Insertando cliente</title>
+<title>Insertando Proveedor</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -36,9 +36,7 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html">
-			<i class="fas fa-shopping-cart" item-width="30" item-height="24">
-			</i>  Tienda Generica</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-shopping-cart" item-width="30" item-height="24"></i>  Tienda Generica</a>
 		</div>
 	</nav>
 
@@ -62,57 +60,57 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo cliente
+			<i class="fas fa-plus-circle"></i> Datos del nuevo proveedor
 		</h1>
 		<div class="container">
 		
 		
 			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el usuario, verifique que no exista un cliente con la cedula y usuario dados</div>
+					role="alert">Error al crear el proveedor, verifique que no exista un proveedor con la cedula y usuario dados</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Cliente creado con exito</div>
+				role="alert">Proveedor creado con exito</div>
 
 		<form id="form1">
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
+					<span class="input-group-text" id="basic-addon1">Nit</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
-						aria-describedby="basic-addon1" required id="cedula_cliente">
+						placeholder="Inserte nit aqui..."
+						aria-describedby="basic-addon1" required id="nit_proveedor">
 				</div>
 
         <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Nombre completo</span>
+					<span class="input-group-text" id="basic-addon2">Ciudad Proveedor</span>
 					<input type="text" class="form-control"
-						placeholder="Inserte nombre aqui..."
-						aria-describedby="basic-addon2" required id="nombre_cliente">
+						placeholder="Inserte ciudad aqui..."
+						aria-describedby="basic-addon2" required id="ciudad_proveedor">
 				</div>
         
+        <div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon3">Nombre</span> <input
+						type="text" class="form-control"
+						placeholder="Inserte nombre aqui..."
+						aria-describedby="basic-addon3" required id="nombre_proveedor">
+				</div>
+
         <div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Dirección</span> <input
 						type="text" class="form-control"
 						placeholder="Inserte dirección aqui..."
-						aria-describedby="basic-addon3" required id="direccion_cliente">
-				</div>
-
-        <div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Telefono</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte telefono aqui..."
-						aria-describedby="basic-addon4" required id="telefono_cliente">
+						aria-describedby="basic-addon4" required id="direccion_proveedor">
 				</div>
 
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Email</span> <input
+					<span class="input-group-text" id="basic-addon5">Telefono</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte email aqui..."
-						aria-describedby="basic-addon5" required id="email_cliente">
+						placeholder="Inserte telefono aqui..."
+						aria-describedby="basic-addon5" required id="telefono_proveedor">
 				</div>
 
 
 			<button type="button" class="btn btn-success" onclick="enviar()">
-				<i class="fas fa-check"></i> Insertar nuevo cliente
+				<i class="fas fa-check"></i> Insertar nuevo proveedor
 			</button>
 
 
@@ -124,23 +122,23 @@
 			<div class="container">
 				
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='<%=request.getContextPath()%>/insertarclientes.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar
 					</button>
-					<button type="button" class="btn btn-danger"
-					onclick="window.location.href='<%=request.getContextPath()%>/eliminarcliente.jsp'">>
+					<button type="button" class="btn btn-danger" 
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
 						<i class="fas fa-trash"></i> Eliminar 
 					</button>
 					<button type="button" class="btn btn-warning"
-					onclick="window.location.href='<%=request.getContextPath()%>/actualizarcliente.jsp'">>
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar
 					</button>
 					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='<%=request.getContextPath()%>/buscarcliente.jsp'">>
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
 						<i class="fas fa-search"></i> Buscar
 					</button>
 					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='<%=request.getContextPath()%>/listaclientes.jsp'">
+					onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
 						<i class="fas fa-search"></i> Listar todos 
 					</button>
 				</div>
@@ -161,21 +159,21 @@
 	var geturl = window.location;
 	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 		function enviar() {
-			var x = document.getElementById("cedula_cliente").value;
+			var x = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseurl+'/listarclientes', false);
+			req.open('GET', baseurl+'/listarproveedores', false);
 			req.send(null);
-			var clientes=null;
+			var proveedores=null;
 			if (req.status == 200)
-				clientes=JSON.parse(req.responseText);
+				proveedores=JSON.parse(req.responseText);
 			  	console.log(JSON.parse(req.responseText));
 			  	
-			for (i = 0; i < clientes.length; i++) {
-				console.log(clientes[i].cedula_cliente);
-				console.log(clientes[i].nombre_cliente);
-				if (clientes[i].cedula_cliente ==x ) {
-					console.log(clientes[i].cedula_cliente +" "+x);	
+			for (i = 0; i < proveedores.length; i++) {
+				console.log(proveedores[i].nit_proveedor);
+				console.log(proveedores[i].nombre_proveedor);
+				if (proveedores[i].nit_proveedor ==x ) {
+					console.log(proveedores[i].nit_proveedor +" "+x);	
 					coincidencia =true
 					break;
 				}
@@ -185,35 +183,35 @@
 			
 			if (coincidencia==false){
 				var formData = new FormData();
-	 			formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
-        formData.append("nombre_cliente", document.getElementById("nombre_cliente").value);
-        formData.append("direccion_cliente",document.getElementById("direccion_cliente").value);
-        formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
-	 			formData.append("email_cliente", document.getElementById("email_cliente").value);
+	 			formData.append("nit_proveedor", document.getElementById("nit_proveedor").value);
+        formData.append("nombre_proveedor", document.getElementById("nombre_proveedor").value);
+        formData.append("direccion_proveedor",document.getElementById("direccion_proveedor").value);
+        formData.append("telefono_proveedor",document.getElementById("telefono_proveedor").value);
+	 			formData.append("ciudad_proveedor", document.getElementById("ciudad_proveedor").value);
 	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", baseurl+"/registrarclientes");
+	 			xhr.open("POST", baseurl+"/registrarproveedor");
 	 			
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 				
-				document.getElementById("cedula_cliente").value = "";
-				document.getElementById("nombre_cliente").value = "";
-				document.getElementById("direccion_cliente").value = "";
-				document.getElementById("telefono_cliente").value = "";
-				document.getElementById("email_cliente").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
 	 			xhr.send(formData);
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_cliente").value = "";
-				document.getElementById("nombre_cliente").value = "";
-				document.getElementById("direccion_cliente").value = "";
-				document.getElementById("telefono_cliente").value = "";
-				document.getElementById("email_cliente").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
 			}	
 		}
 	</script>

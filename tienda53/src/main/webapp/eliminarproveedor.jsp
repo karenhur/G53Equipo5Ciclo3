@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Eliminar cliente</title>
+<title>Eliminar Proveedor</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -61,31 +61,31 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-skull-crossbones"></i> Datos del cliente a eliminar
+			<i class="fas fa-skull-crossbones"></i> Datos del proveedor a eliminar
 		</h1>
 		<div class="container">
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al eliminar el cliente, verifique que 
-				exista un cliente con la cedula dada</div>
+				role="alert">Error al eliminar el proveedor, verifique que 
+				exista un proveedor con el nit dado</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Cliente eliminado con exito</div>
+				role="alert">Proveedor eliminado con exito</div>
 
 			<form id="form1">
 			
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
+					<span class="input-group-text" id="basic-addon1">Nit</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
-						aria-describedby="basic-addon1" required id="cedula_cliente">
+						placeholder="Inserte nit aqui..."
+						aria-describedby="basic-addon1" required id="nit_proveedor">
 				</div>
 
 			</form>
 
 			<button type="button" class="btn btn-danger" onclick="eliminar()">
-				<i class="fas fa-skull-crossbones"></i> Eliminar cliente
+				<i class="fas fa-skull-crossbones"></i> Eliminar proveedor
 			</button>
 			
 			<br>
@@ -95,26 +95,26 @@
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-			
+				
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='<%=request.getContextPath()%>/insertarclientes.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar cliente
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar Proveedor
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='<%=request.getContextPath()%>/eliminarcliente.jsp'">
-						<i class="fas fa-trash"></i> Eliminar cliente
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+						<i class="fas fa-trash"></i> Eliminar Proveedor
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='<%=request.getContextPath()%>/actualizarcliente.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar cliente
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar Proveedor
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='<%=request.getContextPath()%>/buscarcliente.jsp'">
-						<i class="fas fa-search"></i> Buscar un cliente
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+						<i class="fas fa-search"></i> Buscar un Proveedor
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='<%=request.getContextPath()%>/listaclientes.jsp'">
-						<i class="fas fa-search"></i> Listar todos los clientes
+						onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
+						<i class="fas fa-search"></i> Listar todos los Proveedores
 					</button>
 				</div>
 			</div>
@@ -133,21 +133,21 @@
 	var geturl = window.location;
 	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 		function eliminar() {
-			var y = document.getElementById("cedula_cliente").value;
+			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseurl+'/listarclientes', false);
+			req.open('GET', baseurl+'/listarproveedores',false);
 			req.send(null);
-			var clientes = null;
+			var proveedores = null;
 			if (req.status == 200)
-				clientes = JSON.parse(req.responseText);
+				proveedores = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
 
-			for (i = 0; i < clientes.length; i++) {
+			for (i = 0; i < proveedores.length; i++) {
 				
-				console.log(clientes[i].cedula_cliente);
-				if (clientes[i].cedula_cliente == y) {
-					console.log(clientes[i].cedula_cliente + " " + y);
+				console.log(proveedores[i].nit_proveedor);
+				if (proveedores[i].nit_proveedor == y) {
+					console.log(proveedores[i].nit_proveedor + " " + y);
 					coincidencia = true;
 					break;
 				}
@@ -155,10 +155,10 @@
 			console.log(coincidencia);
 
 			if (coincidencia != false) {
-				var cedula=document.getElementById("cedula_cliente").value;
+				var nit=document.getElementById("nit_proveedor").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", baseurl+"/eliminarclientes?cedula_cliente="+cedula);
+				xhr.open("DELETE", baseurl+"/eliminarproveedor?nit="+nit);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
@@ -166,7 +166,7 @@
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 
-				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("nit_proveedor").value = "";
 				xhr.send();
 
 			} else {
@@ -176,7 +176,7 @@
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
 				
-				document.getElementById("cedula_cliente").value = "";;
+				document.getElementById("nit_proveedor").value = "";;
 			}
 		}
 	</script>

@@ -34,29 +34,28 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda generica</a>
+			<a class="navbar-brand link" href="login.jsp" ><i
+				class="fas fa-shopping-cart"></i> Tienda Generica</a>
 		</div>
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="listaclientes.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="listaproveedores.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="insertarproducto.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="registrarventa.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
 
@@ -96,25 +95,25 @@
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-				<div class="row">
+				
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar usuario
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 						<i class="fas fa-trash"></i> Eliminar usuario
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
 						<i class="fas fa-search"></i> Buscar un usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listausuarios.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
 						<i class="fas fa-search"></i> Listar todos los usuarios
 					</button>
 				</div>
@@ -122,21 +121,22 @@
 		</div>
 
 	</div>
-	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+	<nav class="navbar fixed-bottom navbar-light" >
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por Equipo 5 Grupo 53<i
-					class="fas fa-code-branch"></i></a>
+				<a class="navbar-brand links" href="#">
+					Diseñado y programado por Equipo 5 Grupo 53 </a>
 			</div>
 		</div>
 	</nav>
 	<script>
+	var geturl = window.location;
+	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 		function eliminar() {
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', baseurl+'/listarusuarios', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -158,7 +158,7 @@
 				var cedula=document.getElementById("cedula_usuario").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarusuario?cedula_usuario="+cedula);
+				xhr.open("DELETE", baseurl+"/eliminarusuario?cedula_usuario="+cedula); //no sé
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

@@ -46,13 +46,13 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="registrarventa.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
@@ -131,23 +131,23 @@
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar usuario
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 						<i class="fas fa-trash"></i> Eliminar usuario
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
 						<i class="fas fa-search"></i> Buscar un usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listausuarios.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
 						<i class="fas fa-search"></i> Listar todos los usuarios
 					</button>
 				</div>
@@ -166,12 +166,13 @@
 	</nav>
 	<script>
 		function enviar() {
-
+			var geturl = window.location;
+			var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 				
 				var req = new XMLHttpRequest();
 				var coincidencia = false;
 				var user=   document.getElementById("usersearch").value;
-				req.open('GET', 'http://localhost:8080/consultarusuario?usuario='+user, false);
+				req.open('GET', baseurl+'/consultarusuario?usuario='+user, false);
 				req.send(null);
 				var usuario = null;
 				if (req.status == 200)

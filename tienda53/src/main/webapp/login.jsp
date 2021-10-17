@@ -41,12 +41,12 @@
       
  	  <form>
         <!-- USERNAME -->
-        <label for="inputuser"<i class="far fa-user"></i> Usuario</label> 
+        <label for="inputuser"><i class="far fa-user"></i> Usuario</label> 
         <input type="text" id="inputuser"
         placeholder= "Ingresar Usuario">
-
+		
          <!-- PASWORD -->
-        <label for="pasword"<i class="fas fa-key"></i> Contraseña</label>
+        <label for="pasword"><i class="fas fa-key"></i> Contraseña</label>
         <input type="password" id="inputpass" placeholder="Ingresar Contraseña">    
 
 	<div style="margin: auto; text-align: center;">
@@ -76,7 +76,7 @@
 			var y = document.getElementById("inputpass").value;
 			//url de la api 
 			
-			var baseurl = "http://localhost:8080/listarusuarios";
+			var baseurl = "http://3.16.139.214:8080/tienda53-0.0.1-SNAPSHOT/listarusuarios";
 			//creando un objeto de manipulacion de solicitudes
 			var xmlhttp = new XMLHttpRequest();
 			//abriendo la api

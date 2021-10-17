@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Actualizar usuario</title>
+<title>Actualizar cliente</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -61,88 +61,89 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del usuario
+			<i class="fas fa-sync"></i> Datos a actualizar del proveedor
 		</h1>
 		<div class="container">
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al actualizar el usuario, verifique que la cedula y usuario dados sean validos</div>
+				role="alert">Error al actualizar el proveedor, verifique que el nit sea valido</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Usuario actualizado con exito</div>
+				role="alert">Proveedor actualizado con exito</div>
 
 			<form id="form1">
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
+					<span class="input-group-text" id="basic-addon1">Nit</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
-						aria-describedby="basic-addon1" required id="cedula_usuario">
+						placeholder="Inserte nit aqui..."
+						aria-describedby="basic-addon1" required id="nit_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Email</span> <input
+					<span class="input-group-text" id="basic-addon2">Ciudad</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte email aqui..."
-						aria-describedby="basic-addon2" required id="email_usuario">
+						placeholder="Inserte ciudad aqui..."
+						aria-describedby="basic-addon2" required id="ciudad_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Nombrecompleto</span>
+					<span class="input-group-text" id="basic-addon3">Dirección</span>
 					<input type="text" class="form-control"
-						placeholder="Inserte nonbre aqui..."
-						aria-describedby="basic-addon3" required id="nombre_usuario">
+						placeholder="Inserte direccion aqui..."
+						aria-describedby="basic-addon3" required id="direccion_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Username</span> <input
+					<span class="input-group-text" id="basic-addon4">Nombre</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte username aqui..."
-						aria-describedby="basic-addon4" required id="user">
+						placeholder="Inserte nombre aqui..."
+						aria-describedby="basic-addon4" required id="nombre_proveedor">
 				</div>
 
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Password</span> <input
+					<span class="input-group-text" id="basic-addon5">Telefono</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte password aqui..."
-						aria-describedby="basic-addon5" required id="password">
+						placeholder="Inserte telefono aqui..."
+						aria-describedby="basic-addon5" required id="telefono_proveedor">
 				</div>
 			</form>
 
 			<button type="button" class="btn btn-warning" onclick="actualizar()">
-				<i class="fas fa-edit"></i> Actualizar usuario
+				<i class="fas fa-edit"></i> Actualizar Proveedor
 			</button>
 
 			<h1>
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-				
+			
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar usuario
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar Proveedor
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-						<i class="fas fa-trash"></i> Eliminar usuario
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+						<i class="fas fa-trash"></i> Eliminar Proveedor
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar usuario
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar Proveedor
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-						<i class="fas fa-search"></i> Buscar un usuario
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+						<i class="fas fa-search"></i> Buscar un Proveedor
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
-						<i class="fas fa-search"></i> Listar todos los usuarios
+						onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
+						<i class="fas fa-search"></i> Listar todos los Proveedores
 					</button>
 				</div>
 			</div>
 		</div>
 
 	</div>
+	
 	<nav class="navbar fixed-bottom navbar-light" >
 		<div class="row justify-content-between">
 			<div class="col-4">
@@ -151,32 +152,26 @@
 			</div>
 		</div>
 	</nav>
+	
 	<script>
 	var geturl = window.location;
 	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 		function actualizar() {
-			var x = document.getElementById("user").value;
-			var y = document.getElementById("cedula_usuario").value;
+			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseurl+'/listarusuarios', false);
+			req.open('GET', baseurl+'/listarproveedores', false);
 			req.send(null);
-			var usuarios = null;
+			var proveedores = null;
 			if (req.status == 200)
-				usuarios = JSON.parse(req.responseText);
+				proveedores = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
 
-			for (i = 0; i < usuarios.length; i++) {
-				console.log(usuarios[i].usuario);
-				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario === x) {
-					console.log(usuarios[i].usuario + " " + x);
-					coincidencia = true
-					break;
-				}
+			for (i = 0; i < proveedores.length; i++) {
+				console.log(proveedores[i].nit_proveedor);
 
-				if (usuarios[i].cedula_usuario == y) {
-					console.log(usuarios[i].cedula_usuario + " " + y);
+				if (proveedores[i].nit_proveedor == y) {
+					console.log(proveedores[i].nit_proveedor + " " + y);
 					coincidencia = true
 					break;
 				}
@@ -185,29 +180,29 @@
 
 			if (coincidencia != false) {
 				var formData = new FormData();
-				formData.append("cedula_usuario", document
-						.getElementById("cedula_usuario").value);
-				formData.append("email_usuario", document
-						.getElementById("email_usuario").value);
-				formData.append("nombre_usuario", document
-						.getElementById("nombre_usuario").value);
-				formData.append("password",
-						document.getElementById("password").value);
-				formData.append("usuario",
-						document.getElementById("user").value);
+				formData.append("nit_proveedor", document
+						.getElementById("nit_proveedor").value);
+				formData.append("ciudad_proveedor", document
+						.getElementById("ciudad_proveedor").value);
+				formData.append("direccion_proveedor", document
+						.getElementById("direccion_proveedor").value);
+				formData.append("nombre_proveedor",
+						document.getElementById("nombre_proveedor").value);
+				formData.append("telefono_proveedor",
+						document.getElementById("telefono_proveedor").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", baseurl+"/actualizarusuarios");
+				xhr.open("PUT", baseurl+"/actualizarproveedor");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
 				xhr.send(formData);
 
 			} else {
@@ -215,11 +210,11 @@
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				document.getElementById("nit_proveedor").value = "";
+				document.getElementById("ciudad_proveedor").value = "";
+				document.getElementById("direccion_proveedor").value = "";
+				document.getElementById("nombre_proveedor").value = "";
+				document.getElementById("telefono_proveedor").value = "";
 			}
 		}
 	</script>

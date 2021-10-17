@@ -34,29 +34,28 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-light" style="background-color: #cad46e;">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>Tienda Generica</a>
+			<a class="navbar-brand link" href="login.jsp" ><i
+				class="fas fa-shopping-cart"></i> Tienda Generica</a>
 		</div>
 	</nav>
 
 	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-dark" style="background-color: #feb935;">
 		<div class="container">
-			<a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="listaclientes.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="listaproveedores.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="insertarproducto.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="registrarventa.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
 
@@ -118,25 +117,25 @@
 				<i class="fas fa-cogs"></i> Operaciones
 			</h1>
 			<div class="container">
-				<div class="row">
+				
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarclientes.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarclientes.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar cliente
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarcliente.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarcliente.jsp'">
 						<i class="fas fa-trash"></i> Eliminar cliente
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarcliente.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarcliente.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar cliente
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarcliente.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarcliente.jsp'">
 						<i class="fas fa-search"></i> Buscar un cliente
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listaclientes.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/listaclientes.jsp'">
 						<i class="fas fa-search"></i> Listar todos los clientes
 					</button>
 				</div>
@@ -144,21 +143,22 @@
 		</div>
 
 	</div>
-	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+	<nav class="navbar fixed-bottom navbar-light" >
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por Equipo 5 Grupo 53 <i
-					class="fas fa-code-branch"></i></a>
+				<a class="navbar-brand links" href="#">
+					Diseñado y programado por Equipo 5 Grupo 53 </a>
 			</div>
 		</div>
 	</nav>
 	<script>
+	var geturl = window.location;
+	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
 		function actualizar() {
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			req.open('GET', baseurl+'/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)
@@ -189,7 +189,7 @@
 				formData.append("email_cliente",
 						document.getElementById("email_cliente").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarclientes");
+				xhr.open("PUT", baseurl+"/actualizarclientes"); <!-- realmente no sé si esté bien esto -->
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

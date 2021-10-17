@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Lista de usuarios</title>
+<title>Lista de Proveedores</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -27,32 +29,32 @@
 
 
 <script>
-	var geturl = window.location;
-	var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
-	function loadusuarios() {
+var geturl = window.location;
+var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split('/')[1];
+	function loadproveedores() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl+"/listarusuarios", true);
+		xmlhttp.open("GET", baseurl+"/listarproveedores", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var usuarios = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
+				var proveedores = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Nit</th><th>Ciudad</th><th>Nombre</th><th>Direccion</th><th>Telefono</th></tr>";
 				var main = "";
-				for (i = 0; i < usuarios.length; i++) {
-					main += "<tr><td>" + usuarios[i].cedula_usuario
-							+ "</td><td>" + usuarios[i].email_usuario
-							+ "</td><td>" + usuarios[i].nombre_usuario
-							+ "</td><td>" + usuarios[i].password + "</td><td>"
-							+ usuarios[i].usuario + "</td></tr>";
+				for (i = 0; i < proveedores.length; i++) {
+					main += "<tr><td>" + proveedores[i].nit_proveedor
+							+ "</td><td>" + proveedores[i].ciudad_proveedor
+							+ "</td><td>" + proveedores[i].nombre_proveedor
+							+ "</td><td>" + proveedores[i].direccion_proveedor
+							+ "</td><td>" + proveedores[i].telefono_proveedor;
 				}
 				var tblbottom = "</table>";
 				var tbl = tbltop + main + tblbottom;
-				document.getElementById("usuariosinfo").innerHTML = tbl;
+				document.getElementById("proveedoresinfo").innerHTML = tbl;
 			}
 		};
 		xmlhttp.send();
 	}
 	window.onload = function() {
-		loadusuarios();
+		loadproveedores();
 	}
 </script>
 
@@ -91,11 +93,11 @@
 	
 	<div style="padding-left: 5px;">
 	
-		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
+		<h1><i class="fas fa-list-ol"></i> Tabla de Proveedores</h1>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="usuariosinfo">
+					<div class="col align-self-center" id="proveedoresinfo">
 					
 					</div>
 	
@@ -104,24 +106,33 @@
 	
 		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
-					<button type="button" class="btn btn-success" onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
+				
+					<button type="button" class="btn btn-success"
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar Proveedor
+					</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+						<i class="fas fa-trash"></i> Eliminar Proveedor
+					</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar Proveedor
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+						<i class="fas fa-search"></i> Buscar Proveedor
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/listaproveedores.jsp'">
+						<i class="fas fa-search"></i> Listar todos los proveedores
+					</button>
 
-					<button type="button" class="btn btn-danger" onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
-					<i class="fas fa-trash"></i> Eliminar usuario</button>
-					<button type="button" class="btn btn-warning" onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
-					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
-					<button type="button" class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
-
-					<i class="fas fa-search"></i> Buscar un usuario</button>
-					<button type="button" class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
-					<i class="fas fa-search"></i> Listar todos los usuarios</button>
 				</div>
 			</div>
 	</div>
 
-
-	<nav class="navbar fixed-bottom navbar-light" >
+<nav class="navbar fixed-bottom navbar-light" >
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#">
