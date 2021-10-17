@@ -73,7 +73,7 @@
 					<br>
 					</br>
 	<button type="button" class="btn btn-secondary"
-						onclick="window.location.href='/insertarclientes.jsp'">
+						onclick="window.location.href='/reporteventacliente.jsp'">
 						<i class="fas fa-plus-circle"></i> Ventas por Cliente
 					</button>
 	</div>
