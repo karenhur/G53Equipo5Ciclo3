@@ -68,7 +68,7 @@ var baseurl = geturl.protocol + "//" + geturl.host + "/" + geturl.pathname.split
 				class="fas fa-apple-alt"></i> Productos
 			</a> <a class="navbar-brand links" href="registrarventa.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
