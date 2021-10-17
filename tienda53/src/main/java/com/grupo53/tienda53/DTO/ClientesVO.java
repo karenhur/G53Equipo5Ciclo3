@@ -12,7 +12,6 @@ public class ClientesVO implements Serializable {
 	private String email_cliente;
 	private String nombre_cliente;
 	private String telefono_cliente;
-	
 	/**
 	 * @return the cedula_cliente
 	 */
