@@ -19,7 +19,7 @@ public class VentasClienteDAO {
 
 		try {
 			//prepare la sentencia en la base de datos
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT clientes.cedula_cliente, clientes.nombre_cliente, SUM(total_venta) AS total_venta FROM ventas INNER JOIN clientes on clientes.cedula_cliente = ventas.cedula_cliente GROUP BY clientes.cedula_cliente");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT clientes.cedula_cliente, clientes.nombre_cliente, SUM(valor_venta) AS total_venta FROM ventas INNER JOIN clientes on clientes.cedula_cliente = ventas.cedula_cliente GROUP BY clientes.cedula_cliente");
 			
 			//ejecute la sentencia
 			ResultSet res = consulta.executeQuery();
